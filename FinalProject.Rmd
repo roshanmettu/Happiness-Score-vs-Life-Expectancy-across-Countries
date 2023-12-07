@@ -1,0 +1,260 @@
+---
+title: "FinalProject"
+author: "Uyen Dang, Roshan Mettupalli, Josh Williams, Mo Young"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup}
+library(readr)
+library(tidyverse)
+```
+
+# Introduction
+Many individuals have heard the saying “happy people live longer”, a notion that resonates with the broader discourse on the intricate relationship between well-being and longevity. In recent years, the intersection of well-being and public health has become a focal point of global discussions. Specifically, over the last 50 years, life expectancy globally has increased about 10-15 years. The pursuit of happiness and a fulfilling life is a universal human aspiration, and its connection with various socio-economic factors has intrigued researchers, policymakers, and the general public alike. To further analyze this, our group project ultimately aims to explore the relationship between a country’s happiness score and its life expectancy, while focusing specifically on data from the year 2015. Happiness and life expectancy are variables that are thought to usually go hand-in-hand, though the research on its association is limited due to the complex interplay of multifaceted determinants , thus, warrants our interest in this topic. 
+
+The intertwining dynamics of happiness and life expectancy present a multidimensional lens through which we can understand the complex nature of human well-being. As nations strive to enhance the quality of life for their citizens, understanding the factors that contribute to happiness becomes crucial. Our investigation is joined by different countries’ happiness scores and their life expectancy, along with other variables to widen our research and understanding. We aim to create a comprehensive assessment of happiness levels worldwide, while hoping to provide a unique dataset that allows for a nuanced exploration of the links between subjective well-being and one of the most fundamental indicators of public health – life expectancy.
+
+The relationship between happiness and health has been emphasized in published works of literature and media coverage. Many studies indicate that having a positive emotional state may contribute to better health outcomes, mentally and physically. Nonetheless, further research is needed to determine the precise relationship between happiness and life expectancy. To unravel the intricacies of these variables, our project proposes four questions that act as a source of guidance throughout our analysis.
+
+
+
+### Research questions
+1. How strongly does the happiness score in a specific country correlate with its life expectancy, and what trends or patterns emerge from this relationship?
+2. To what extent do socio-economic factors, such as GDP per capita and population, influence the connection between happiness scores and life expectancy across diverse countries? 
+3. How does the happiness rank of a country correlate with its life expectancy, and are there notable variations among countries with similar happiness scores but different life expectancies? 
+4. Can the status of a country (e.g., developed or developing) act as a moderating factor in the relationship between happiness scores and life expectancy? 
+
+
+
+### Significance
+Understanding the intricate connection between happiness and life expectancy has far-reaching implications for policymakers, public health professionals, and the general public. By unraveling the underlying factors that contribute to well-being, this analysis could provide valuable insights into targeted interventions that promote happiness and, by extension, healthier societies as country leaders are envisioning a better tomorrow for their citizens. Furthermore, the findings of this study could contribute to the ongoing discourse on holistic development, emphasizing the importance of considering both subjective and objective indicators in shaping comprehensive public policies. As such, this report is a compelling exploration of the interplay between happiness and life expectancy, offering potential avenues for fostering improved societal well-being. From a public health perspective, the findings of this analysis could offer actionable insights for policymakers, healthcare practitioners, and community leaders. Strategies that prioritize not only the treatment of diseases but also the enhancement of societal well-being are essential for fostering resilient, thriving communities. As the world continues to grapple with unprecedented health challenges, this project contributes to the broader conversation on redefining health outcomes, placing happiness and life expectancy at the forefront of a comprehensive public health agenda.
+
+
+
+# Explain your data
+
+### Why do you use these datasets?
+* Life Expectancy Dataset: We chose this dataset because it contains health data of most of the countries of the world. It also contains economic data, so it was interesting to see the correlation between economy and health data. One of the more important reasons for why we chose this dataset was because it contained a country column that contained a lot of countries similar to the Happiness dataset. This country column was able to act like a  “primary key”. Lastly, this dataset contained data from the 2000’s to 2015, and our research question primarily focused on data from 2015.
+
+* Happiness Dataset: We chose this dataset because it contains information on happiness. To be specific, this dataset looked at multiple factors related to happiness such as social support, corruption perception, freedom, and more. Also, this dataset contained a country column similar to the Life Expectancy Data, so the country column in the Happiness Dataset was able to act similarly to a “foreign key” to connect our data to the Life Expectancy Dataset. Lastly, this dataset contained updated data for 2015, which was perfect because the life expectancy dataset also contained data from 2015. We wanted our data to be consistent so it was very important that both datasets had data from the same year. 
+
+
+
+### Where do your datasets originate from?
+* Life Expectancy Dataset: We got this data from Kaggle, but the dataset for Life Expectancy originated from the Global Health Observatory (GHO) data repository under the World Health Organization. 
+
+* Happiness Dataset: We got his data from Kaggle, but it was originally from the Gallup World Poll. 
+
+
+
+### Who collected the data?
+* Life Expectancy Dataset: The health data from the data set was collected by the World Health Organization. Meanwhile, the economic data was collected by the United Nations.
+
+* Happiness Dataset: This data was primarily collected by the Gallup World Poll, but some of the data was collected from World Health Organization, World Development Indicators, and other other published journal articles. The data was then prepared and researched through the help of these universities: Sustainable Development (Columbia University), Centre of Economic Performance (London School of Economics), Vancouver School of Economics (University of British Columbia), Wellbeing Research Centre (University of Oxford), and the Helping and Happiness Lab (Simon Fraser University).
+
+
+
+### The data usage permissions
+* Life Expectancy Dataset: The data is publicly available meaning that anyone can access it. The purpose of this data is for health data analysis. 
+
+* Happiness Dataset: This data is publically available. The main purpose of this data is to help the Sustainable Development Solutions Network of the United Nations, but it could be used by anyone. 
+
+
+
+### What are the datasets about? What is the population and what is the sample?
+* Life Expectancy Dataset: This dataset focuses primarily on immunization, mortality, economic, social, and other health related factors for most countries in the world. I wasn’t able to track down the original datasets from WHO (because they have so much data), but I’m assuming the population is all the countries looked at in the dataset. As of sample, since I couldn’t find the original dataset’s info, I am unable to supply anything on sample. 
+
+* Happiness Dataset: This data set focuses on multiple factors that relate to happiness on an international scale. Contents include happiness rank, happiness score, economy (GDP), family, health (life expectancy), freedom, trust (gov corruption), generosity, and more. The population of this dataset includes most countries of the world. The sample of this dataset aims to have 2000+ people per country to have a large enough sample size to reduce random sampling errors. It has a 95% confidence interval.
+
+
+
+### Discuss any data quality issues you encountered.
+* Life Expectancy Dataset: A data quality issue that we encountered in this dataset was that there were a few NA values. Also something to note according to the author of this dataset on Kaggle was that less known countries that didn’t have enough information were excluded from the dataset such as Tonga, Togo, and Cabo Verde.
+
+* Happiness Dataset: Some countries with this dataset didn’t align with the Life Expectancy data, so those countries were excluded. Some things to note from the World Happiness Report, which is the website that includes all the information about this data, is that there were a few out of date data (data not from updated to 2015) at the time when they were collecting and creating this dataset. For these data, they mixed other related up-to-date data with mathematical calculations to infer these values. 
+
+
+
+### What do rows represent in your final dataset?
+* In our final dataset, rows represent each country in the year 2015, and their corresponding happiness and life expectancy statistics.
+
+
+
+### How many observations do you have?
+* We have 135 observations.
+
+
+
+### What are the relevant variables and how are they coded?
+* The relevant variables are country, year, status, life expectancy, GDP, population, happiness rank, happiness score, standard error, happiness category, and maximum happiness. Country, status, and happiness category are coded as characters, whereas the rest are coded as numeric variables. Our first created variable was happiness category, which was coded as the top 10 being Category A, 11-50 being Category B, 51-100 being Category C, and the remaining being Category D. Our other created variable was maximum happiness, which was coded as the happiness score added to the standard error to represent the maximum happiness score possible for each country. The remaining variables were all collected from the two data sets. 
+
+
+
+### Are there any missing, non-plausible values, or other quality issues in the relevant variables? How many?
+* There are 18 missing values in the relevant variables.
+
+
+
+### What are the original data sources
+* Life expectancy data: https://www.kaggle.com/datasets/kumarajarshi/life-expectancy-who
+* Happiness data: https://www.kaggle.com/datasets/unsdsn/world-happiness
+
+
+
+### Explanation of all variables you include here
+* Country: each country being used for its happiness and life expectancy statistics, the observational unit of this study
+* Year: 2015 data for all countries
+* Status: status as a country, either developed or developing
+* Life expectancy: the amount of years that a person in that country is expected to live
+* GDP: the gross domestic product, which is used to measure each country’s economy
+* Population: the total number of people living in a country
+* Happiness rank: the country’s worldwide rank in happiness score
+* Happiness score: surveyed from each country by asking “How would you rate your happiness on a scale of 0-10”, this statistic is the average score per country
+* Standard error: the standard error of the happiness score, statistically is the standard deviation of the sampling distribution
+* Happiness category: category by happiness score, the top 10 are Category A, 11-50 are Category B, 51-100 are Category C, and the remaining are Category D
+* Maximum happiness: computed by adding the happiness score to the standard error
+
+
+### Basic summary statistics
+* Number of Rows: 135
+* Number of Columns: 11
+* Number of Missing (Country): 0
+* Number of Missing (Year): 0
+* Number of Missing (Status): 0
+* Number of Missing (Life Expectancy): 0
+* Number of Missing (GDP): 5
+* Number of Missing (Population): 13
+* Number of Missing (Happiness Rank): 0
+* Number of Missing (Happiness Score): 0
+* Number of Missing (Standard Error): 0
+* Number of Missing (Happiness Category): 0
+* Number of Missing (Maximum Happiness): 0
+
+
+
+```{r dataCleaningLifeExpectancy}
+le <- read_delim("Life Expectancy Data.csv")
+le <- le %>%
+  filter(Year == 2015) %>%
+  select(!c("Alcohol", "Total expenditure", "percentage expenditure"))
+le
+```
+
+
+
+```{r dataCleaning2015}
+happy <- read_delim("2015.csv")
+happy <- happy %>%
+  select(!"Health (Life Expectancy)")
+happy
+```
+
+
+
+```{r mergedData}
+mergedData <- inner_join(le, happy, by = "Country")
+mergedData <- mergedData %>%
+  select(Country, Year, Status, `Life expectancy `, GDP, Population, `Happiness Rank`, `Happiness Score`, `Standard Error`)
+
+```
+
+
+
+```{r newCategoricalCol}
+mergedData <- mergedData %>%
+  mutate("happiness_category" = ifelse(`Happiness Rank` <= 10, "Category A", 
+                              ifelse(`Happiness Rank` <= 50, "Category B", 
+                                     ifelse(`Happiness Rank` <= 100, "Category C", "Category D"))))
+```
+
+
+
+```{r newNumericalCol}
+mergedData <- mergedData %>%
+  mutate("maximum_happiness" = `Happiness Score` + `Standard Error`)
+
+```
+
+
+
+```{r summary}
+cat("Life Expectancy Summary: ", "\n")
+summary(mergedData$`Life expectancy `)
+
+cat("Maximum Happiness Summary: ")
+summary(mergedData$maximum_happiness)
+
+write.csv(mergedData, "mergedData.csv", row.names = FALSE)
+``` 
+
+
+
+```{r uyen}
+ggplot(mergedData, aes(x = `Happiness Score`, y = `Life expectancy `)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  labs(title = "Scatter Plot of Happiness Score vs Life Expectancy",
+       x = "Happiness Score",
+       y = "Life Expectancy") +
+  theme_minimal()
+```
+
+
+
+```{r roshan}
+ggplot(mergedData, aes(x = `Happiness Score`, y = `Life expectancy `, color = `GDP`)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  labs(title = "Scatter Plot of Happiness Score vs Life Expectancy with GDP",
+       x = "Happiness Score",
+       y = "Life Expectancy",
+       color = "GDP") +
+  theme_minimal()
+
+
+ggplot(mergedData, aes(x = `Happiness Score`, y = `Life expectancy `, color = `Population`)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  labs(title = "Scatter Plot of Happiness Score vs Life Expectancy with Population",
+       x = "Happiness Score",
+       y = "Life Expectancy",
+       color = "Population") +
+  theme_minimal()
+```
+
+
+
+```{r mo}
+ggplot(mergedData, aes(x = `Life expectancy `, y = `Happiness Rank`)) +
+  geom_point() +
+  geom_smooth(method = lm, se = FALSE) + 
+  labs(
+    x = "Life Expectancy",
+    y = "Happiness Rank",
+    caption = "This is a scatter plot with a trend line to indicate the correlation between happiness (rank) and life expectancy"
+  )
+
+ggplot(mergedData, aes(x = `Life expectancy `, y = `Happiness Rank`, col = happiness_category)) +
+  geom_point() +
+  labs(
+    x = "Life Expectancy",
+    y = "Happiness Rank",
+    color = "Happiness Category",
+    caption = "This is a scatter plot that's color coded to indicate the correlation between happiness (rank and category) and life expectancy"
+  )
+```
+
+
+
+```{r josh}
+mergedData %>%
+  ggplot(aes(x = `Life expectancy `, y = `Happiness Score`, col = Status)) + 
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Life Expectancy", 
+       y = "Happiness Score", 
+       title = "Life Expectancy vs Happiness Score for Countries in 2015")
+```
+
+

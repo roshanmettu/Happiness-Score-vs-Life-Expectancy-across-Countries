@@ -1,0 +1,136 @@
+"Country","Year","Status","Life expectancy ","GDP","Population","Happiness Rank","Happiness Score","Standard Error","happiness_category","maximum_happiness"
+"Afghanistan",2015,"Developing",65,584.25921,33736494,153,3.575,0.03084,"Category D",3.60584
+"Albania",2015,"Developing",77.8,3954.22783,28873,95,4.959,0.05013,"Category C",5.00913
+"Algeria",2015,"Developing",75.6,4132.76292,39871528,68,5.605,0.05099,"Category C",5.65599
+"Angola",2015,"Developing",52.4,3695.793748,2785935,137,4.033,0.04758,"Category D",4.08058
+"Argentina",2015,"Developing",76.3,13467.1236,43417765,30,6.574,0.04612,"Category B",6.62012
+"Armenia",2015,"Developing",74.8,369.654776,291695,127,4.35,0.04763,"Category D",4.39763
+"Australia",2015,"Developed",82.8,56554.3876,23789338,10,7.284,0.04083,"Category A",7.32483
+"Austria",2015,"Developed",81.5,43665.947,8633169,13,7.2,0.03751,"Category B",7.23751
+"Azerbaijan",2015,"Developing",72.7,55.31382,9649341,80,5.212,0.03363,"Category C",5.24563
+"Bahrain",2015,"Developing",76.9,22688.87824,NA,49,5.96,0.05412,"Category B",6.01412
+"Bangladesh",2015,"Developing",71.8,121.15812,1612886,109,4.694,0.03077,"Category D",4.72477
+"Belarus",2015,"Developing",72.3,5949.11677,9489616,59,5.813,0.03938,"Category C",5.85238
+"Belgium",2015,"Developed",81.1,4356.875,11274196,19,6.937,0.03595,"Category B",6.97295
+"Benin",2015,"Developing",60,783.94791,1575952,155,3.34,0.03656,"Category D",3.37656
+"Bhutan",2015,"Developing",69.8,2613.645177,787386,79,5.253,0.03225,"Category C",5.28525
+"Bosnia and Herzegovina",2015,"Developing",77.4,4574.9787,3535961,96,4.949,0.06913,"Category C",5.01813
+"Botswana",2015,"Developing",65.7,6532.651,229197,128,4.332,0.04934,"Category D",4.38134
+"Brazil",2015,"Developing",75,8757.2622,2596218,16,6.983,0.04076,"Category B",7.02376
+"Bulgaria",2015,"Developed",74.5,6993.47736,7177991,134,4.218,0.04828,"Category D",4.26628
+"Burkina Faso",2015,"Developing",59.9,615.592225,1811624,152,3.587,0.04324,"Category D",3.63024
+"Burundi",2015,"Developing",59.6,33.681223,119927,157,2.905,0.08658,"Category D",2.99158
+"Cambodia",2015,"Developing",68.7,1163.18977,15517635,145,3.819,0.05069,"Category D",3.86969
+"Cameroon",2015,"Developing",57.3,1244.429421,22834522,133,4.252,0.04678,"Category D",4.29878
+"Canada",2015,"Developing",82.2,43315.744,3584861,5,7.427,0.03553,"Category A",7.46253
+"Central African Republic",2015,"Developing",52.5,348.381417,45461,148,3.678,0.06112,"Category D",3.73912
+"Chad",2015,"Developing",53.1,777.248751,149413,149,3.667,0.0383,"Category D",3.7053
+"Chile",2015,"Developing",85,13653.2264,17762681,27,6.67,0.058,"Category B",6.728
+"China",2015,"Developing",76.1,869.211938,137122,84,5.14,0.02424,"Category C",5.16424
+"Colombia",2015,"Developing",74.8,644.525556,48228697,33,6.477,0.05051,"Category B",6.52751
+"Comoros",2015,"Developing",63.5,727.6463868,777424,140,3.956,0.04797,"Category D",4.00397
+"Costa Rica",2015,"Developing",79.6,1146.36273,487852,12,7.226,0.04454,"Category B",7.27054
+"Croatia",2015,"Developed",78,11579.6674,42364,62,5.759,0.04394,"Category C",5.80294
+"Cyprus",2015,"Developed",85,2375.1127,116985,67,5.689,0.0558,"Category C",5.7448
+"Denmark",2015,"Developed",86,5314.64416,5683483,3,7.527,0.03328,"Category A",7.56028
+"Djibouti",2015,"Developing",63.5,1862.167274,927414,126,4.369,0.08096,"Category D",4.44996
+"Dominican Republic",2015,"Developing",73.9,6468.471648,1528394,98,4.885,0.07446,"Category C",4.95946
+"Ecuador",2015,"Developing",76.2,625.62224,16144368,48,5.975,0.04528,"Category B",6.02028
+"Egypt",2015,"Developing",79,NA,NA,135,4.194,0.0326,"Category D",4.2266
+"El Salvador",2015,"Developing",73.5,4127.11775,6312478,42,6.13,0.05618,"Category B",6.18618
+"Estonia",2015,"Developing",77.6,1774.9291,131547,73,5.429,0.04013,"Category C",5.46913
+"Ethiopia",2015,"Developing",64.8,645.4637627,9987333,122,4.512,0.0378,"Category D",4.5498
+"Finland",2015,"Developing",81.1,4245.39744,5479531,6,7.406,0.0314,"Category A",7.4374
+"France",2015,"Developing",82.4,36526.7711,6662468,29,6.575,0.03512,"Category B",6.61012
+"Gabon",2015,"Developing",66,7388.984144,193175,143,3.896,0.04547,"Category D",3.94147
+"Georgia",2015,"Developing",74.4,3764.64912,37171,130,4.297,0.04221,"Category D",4.33921
+"Germany",2015,"Developed",81,41176.88158,81686611,26,6.75,0.01848,"Category B",6.76848
+"Ghana",2015,"Developing",62.4,1361.11395,27582821,114,4.633,0.04742,"Category D",4.68042
+"Greece",2015,"Developing",81,187.78991,182883,102,4.857,0.05062,"Category D",4.90762
+"Guatemala",2015,"Developing",71.9,3923.573344,16252429,43,6.123,0.05224,"Category B",6.17524
+"Guinea",2015,"Developing",59,554.48766,1291533,150,3.656,0.0359,"Category D",3.6919
+"Haiti",2015,"Developing",63.5,814.5463952,171161,119,4.518,0.07331,"Category D",4.59131
+"Honduras",2015,"Developing",74.6,2326.15856,896829,105,4.788,0.05648,"Category D",4.84448
+"Hungary",2015,"Developed",75.8,12365.6263,984328,104,4.8,0.06107,"Category D",4.86107
+"Iceland",2015,"Developed",82.7,5734.4436,33815,2,7.561,0.04884,"Category A",7.60984
+"India",2015,"Developing",68.3,1613.18878,1395398,117,4.565,0.02043,"Category D",4.58543
+"Indonesia",2015,"Developing",69.1,3336.16686,258162113,74,5.399,0.02596,"Category C",5.42496
+"Iraq",2015,"Developing",68.9,4974.2693,36115649,112,4.677,0.05232,"Category D",4.72932
+"Ireland",2015,"Developed",81.4,6664.144,4676835,18,6.94,0.03676,"Category B",6.97676
+"Israel",2015,"Developing",82.5,35729.37253,8381,11,7.278,0.0347,"Category B",7.3127
+"Italy",2015,"Developed",82.7,349.14755,673582,50,5.948,0.03914,"Category B",5.98714
+"Jamaica",2015,"Developing",76.2,4965.989857,2871934,65,5.709,0.13693,"Category C",5.84593
+"Japan",2015,"Developed",83.7,34474.13736,127141,46,5.987,0.03581,"Category B",6.02281
+"Jordan",2015,"Developing",74.1,496.99275,915932,82,5.192,0.04524,"Category C",5.23724
+"Kazakhstan",2015,"Developing",72,159.9817,17544126,54,5.855,0.04114,"Category C",5.89614
+"Kenya",2015,"Developing",63.4,1349.97144,47236259,125,4.419,0.04734,"Category D",4.46634
+"Kuwait",2015,"Developing",74.7,28975.418,NA,39,6.295,0.04456,"Category B",6.33956
+"Kyrgyzstan",2015,"Developing",71.1,NA,NA,77,5.286,0.03823,"Category C",5.32423
+"Latvia",2015,"Developed",74.6,13666.58336,1977527,89,5.098,0.0464,"Category C",5.1444
+"Lebanon",2015,"Developing",74.9,846.632851,5851479,103,4.839,0.04337,"Category D",4.88237
+"Lesotho",2015,"Developing",53.7,173.82893,2174645,97,4.898,0.09438,"Category C",4.99238
+"Liberia",2015,"Developing",61.4,452.38717,4499621,116,4.571,0.11068,"Category D",4.68168
+"Libya",2015,"Developing",72.7,NA,NA,63,5.754,0.07832,"Category C",5.83232
+"Lithuania",2015,"Developed",73.6,14252.42853,29491,56,5.833,0.03843,"Category C",5.87143
+"Luxembourg",2015,"Developed",82,1199.8223,56964,17,6.946,0.03499,"Category B",6.98099
+"Madagascar",2015,"Developing",65.5,41.8575951,2423488,147,3.681,0.03633,"Category D",3.71733
+"Malawi",2015,"Developing",58.3,362.6575444,1757367,131,4.292,0.0613,"Category D",4.3533
+"Malaysia",2015,"Developing",75,9643.644683,3723155,61,5.77,0.0433,"Category C",5.8133
+"Mali",2015,"Developing",58.2,729.725338,1746795,138,3.995,0.05602,"Category D",4.05102
+"Malta",2015,"Developed",81.7,23819.4636,431874,37,6.302,0.04206,"Category B",6.34406
+"Mauritania",2015,"Developing",63.1,1158.256469,4182341,124,4.436,0.03947,"Category D",4.47547
+"Mauritius",2015,"Developing",74.6,9252.11724,126265,71,5.477,0.07197,"Category C",5.54897
+"Mexico",2015,"Developing",76.7,9143.128494,12589949,14,7.187,0.04176,"Category B",7.22876
+"Mongolia",2015,"Developing",68.8,3944.1839,2976877,100,4.874,0.03313,"Category C",4.90713
+"Montenegro",2015,"Developing",76.1,6461.192554,622159,82,5.192,0.05235,"Category C",5.24435
+"Morocco",2015,"Developing",74.3,2847.285569,3483322,92,5.013,0.0342,"Category C",5.0472
+"Mozambique",2015,"Developing",57.6,528.3125597,281691,94,4.971,0.07896,"Category C",5.04996
+"Myanmar",2015,"Developing",66.6,1194.59137,5243669,129,4.307,0.04351,"Category D",4.35051
+"Nepal",2015,"Developing",69.2,743.7653489,28656282,121,4.514,0.03607,"Category D",4.55007
+"Netherlands",2015,"Developed",81.9,44292.88473,16939923,7,7.378,0.02799,"Category A",7.40599
+"New Zealand",2015,"Developed",81.6,3821.8937,NA,9,7.286,0.03371,"Category A",7.31971
+"Nicaragua",2015,"Developing",74.8,295.966488,68235,57,5.828,0.05371,"Category C",5.88171
+"Niger",2015,"Developing",61.8,358.99731,19896965,144,3.845,0.03602,"Category D",3.88102
+"Nigeria",2015,"Developing",54.5,2655.157977,181181744,78,5.268,0.04192,"Category C",5.30992
+"Norway",2015,"Developed",81.8,7455.24654,518867,4,7.522,0.0388,"Category A",7.5608
+"Oman",2015,"Developing",76.6,16627.36433,NA,22,6.853,0.05335,"Category B",6.90635
+"Pakistan",2015,"Developing",66.4,1431.244865,18938513,81,5.194,0.03726,"Category C",5.23126
+"Panama",2015,"Developing",77.8,13134.4367,3969249,25,6.786,0.0491,"Category B",6.8351
+"Paraguay",2015,"Developing",74,419.367724,6639119,53,5.878,0.04563,"Category C",5.92363
+"Peru",2015,"Developing",75.5,63.343259,31376671,58,5.824,0.04615,"Category C",5.87015
+"Philippines",2015,"Developing",68.5,2878.33837,11716359,90,5.073,0.04934,"Category C",5.12234
+"Poland",2015,"Developed",77.5,12565.9876,37986412,60,5.791,0.04263,"Category C",5.83363
+"Portugal",2015,"Developed",81.1,1922.681,135876,88,5.102,0.04802,"Category C",5.15002
+"Qatar",2015,"Developing",78.2,66346.52267,NA,28,6.611,0.06257,"Category B",6.67357
+"Romania",2015,"Developed",75,8958.788593,19815481,86,5.124,0.06607,"Category C",5.19007
+"Rwanda",2015,"Developing",66.1,71.348397,11629553,154,3.465,0.03464,"Category D",3.49964
+"Saudi Arabia",2015,"Developing",74.5,2732.86172,NA,35,6.411,0.04633,"Category B",6.45733
+"Senegal",2015,"Developing",66.7,98.7256145,14976994,142,3.904,0.03608,"Category D",3.94008
+"Serbia",2015,"Developing",75.6,5237.255334,795383,87,5.123,0.04864,"Category C",5.17164
+"Sierra Leone",2015,"Developing",51,587.538233,723725,123,4.507,0.07068,"Category D",4.57768
+"Singapore",2015,"Developed",83.1,53629.73746,NA,24,6.798,0.0378,"Category B",6.8358
+"Slovakia",2015,"Developed",76.7,NA,NA,45,5.995,0.04267,"Category B",6.03767
+"Slovenia",2015,"Developed",88,2729.86383,263531,55,5.848,0.04251,"Category C",5.89051
+"South Africa",2015,"Developing",62.9,5769.77258,5511976.68,113,4.642,0.04585,"Category D",4.68785
+"Spain",2015,"Developed",82.8,25683.84565,46447697,36,6.329,0.03468,"Category B",6.36368
+"Sri Lanka",2015,"Developing",74.9,3844.89123,2966,132,4.271,0.03751,"Category D",4.30851
+"Sudan",2015,"Developing",64.1,2513.884661,3864783,118,4.55,0.0674,"Category D",4.6174
+"Suriname",2015,"Developing",71.6,8818.982566,55328,40,6.269,0.09811,"Category B",6.36711
+"Swaziland",2015,"Developing",58.9,3136.92511,131911,101,4.867,0.08742,"Category D",4.95442
+"Sweden",2015,"Developed",82.4,5585.25847,9799186,8,7.364,0.03157,"Category A",7.39557
+"Switzerland",2015,"Developed",83.4,8989.8424,8282396,1,7.587,0.03411,"Category A",7.62111
+"Tajikistan",2015,"Developing",69.7,918.6771543,8548651,106,4.786,0.03198,"Category D",4.81798
+"Thailand",2015,"Developing",74.9,5814.863134,686576,34,6.455,0.03557,"Category B",6.49057
+"Togo",2015,"Developing",59.9,551.138346,741682,158,2.839,0.06727,"Category D",2.90627
+"Trinidad and Tobago",2015,"Developing",71.2,17321.83373,13692,41,6.168,0.10895,"Category B",6.27695
+"Tunisia",2015,"Developing",75.3,3828.91589,11273661,107,4.739,0.03589,"Category D",4.77489
+"Turkey",2015,"Developing",75.8,1979.52569,78271472,76,5.332,0.03864,"Category C",5.37064
+"Turkmenistan",2015,"Developing",66.3,6432.668768,5565284,70,5.548,0.04175,"Category C",5.58975
+"Uganda",2015,"Developing",62.3,693.8963829,414487,141,3.931,0.04317,"Category D",3.97417
+"Ukraine",2015,"Developing",71.3,2124.662666,4515429,111,4.681,0.04412,"Category D",4.72512
+"United Arab Emirates",2015,"Developing",77.1,3911.74689,NA,20,6.901,0.03729,"Category B",6.93829
+"Uruguay",2015,"Developing",77,15524.84247,3431552,32,6.485,0.04539,"Category B",6.53039
+"Uzbekistan",2015,"Developing",69.4,2137.576852,312989,44,6.003,0.04361,"Category B",6.04661
+"Yemen",2015,"Developing",65.7,NA,NA,136,4.077,0.04367,"Category D",4.12067
+"Zambia",2015,"Developing",61.8,1313.889646,161587,85,5.129,0.06988,"Category C",5.19888
+"Zimbabwe",2015,"Developing",67,118.69383,15777451,115,4.61,0.0429,"Category D",4.6529
