@@ -258,7 +258,3 @@ mergedData %>%
 ```
 
 
-
-``` {r test}
-print("hello")
-```
