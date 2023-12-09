@@ -21,7 +21,7 @@ The relationship between happiness and health has been emphasized in published w
 
 ### Research questions
 1. How strongly does the happiness score in a specific country correlate with its life expectancy, and what trends or patterns emerge from this relationship?
-2. To what extent do socio-economic factors, such as GDP per capita and population, influence the connection between happiness scores and life expectancy across diverse countries? 
+2. To what extent do socio-economic factors, such as GDP and population, influence the connection between happiness scores and life expectancy across diverse countries? 
 3. How does the happiness rank of a country correlate with its life expectancy, and are there notable variations among countries with similar happiness scores but different life expectancies? 
 4. Can the status of a country (e.g., developed or developing) act as a moderating factor in the relationship between happiness scores and life expectancy? 
 
@@ -132,7 +132,26 @@ Understanding the intricate connection between happiness and life expectancy has
 * Number of Missing (Maximum Happiness): 0
 
 
+# Methods
+### Which variables did you include?
+The following variables were included in our analysis to explore the relationship between happiness and life expectancy: 
 
+1. Country: The observational unit of the study.
+2. Year: Limited to 2015 for consistency in data.
+3. Status: Indicates whether a country is developed or developing.
+4. Life Expectancy: Fundamental to our investigation.
+5. GDP: Reflects a country's economic status.
+6. Population: Provides insight into the size of the country.
+7. Happiness Rank and Score: Key indicators of subjective well-being.
+8. Standard Error: Represents the uncertainty in the happiness score.
+9. Happiness Category: Categorized based on rank.
+10. Maximum Happiness: Calculated as the sum of happiness score and standard error, representing the highest possible happiness score for each country.
+
+We decided to choose these variables in order to capture factors while considering well-being, economy, social, and health dimensions. The inclusion of status, GDP, and population allows for an exploration of socioeconomic influences on the happiness-life expectancy relationship.
+
+
+
+### How did you process your data?
 ```{r dataCleaningLifeExpectancy}
 le <- read_delim("Life Expectancy Data.csv")
 le <- le %>%
@@ -140,6 +159,7 @@ le <- le %>%
   select(!c("Alcohol", "Total expenditure", "percentage expenditure"))
 le
 ```
+* Life Expectancy Dataset has been read and filtered for the year 2015. Some columns (Alcohol, Total expenditure, percentage expenditure) were excluded
 
 
 
@@ -149,6 +169,7 @@ happy <- happy %>%
   select(!"Health (Life Expectancy)")
 happy
 ```
+* Happiness Dataset has been read and filtered
 
 
 
@@ -156,8 +177,8 @@ happy
 mergedData <- inner_join(le, happy, by = "Country")
 mergedData <- mergedData %>%
   select(Country, Year, Status, `Life expectancy `, GDP, Population, `Happiness Rank`, `Happiness Score`, `Standard Error`)
-
 ```
+* "mergedData" is made based on "Country" column and uses inner join to merge "le" and "happy" datasets
 
 
 
@@ -167,14 +188,15 @@ mergedData <- mergedData %>%
                               ifelse(`Happiness Rank` <= 50, "Category B", 
                                      ifelse(`Happiness Rank` <= 100, "Category C", "Category D"))))
 ```
+* "happiness_category" is our newly created categorical column based on happiness rank
 
 
 
 ```{r newNumericalCol}
 mergedData <- mergedData %>%
   mutate("maximum_happiness" = `Happiness Score` + `Standard Error`)
-
 ```
+* "maximum_happiness" is our newly added numerical column which was created by adding happiness score and standard error
 
 
 
@@ -187,8 +209,41 @@ summary(mergedData$maximum_happiness)
 
 write.csv(mergedData, "mergedData.csv", row.names = FALSE)
 ``` 
+* prints basic summary statistics of newly created merged data set
 
 
+
+### How did you select your sample?
+* We selected our sample by filtering it by the year 2015. This was because the availability of data was good for this year. We aimed to analyze and represent all the countries worldwide, considering developed and developing nations. After cleaning and merging out data, we were left with 135 observations.
+
+
+
+### Technical Decisions
+* Handling Missing Values: Identified and addressed missing values in GDP and population. A total of 18 missing values were observed
+
+* Categorical Variables: Created categorical variables such as "happiness_category" to facilitate analysis and interpretation
+
+* Graphical Representations: Utilized scatter plots with trend lines to visually explore relationships between variables
+
+
+
+### Statistical Methods
+* Correlation Analysis: Utilized scatter plots and trend lines to visually assess the strength and direction of relationships, especially between happiness score and life expectancy
+
+* Moderation Analysis: Examined the influence of the country's development status on the relationship between happiness scores and life expectancy using a scatter plot with trend lines for developed and developing countries 
+
+* Graphical Visualization: Incorporated graphical representations for a more intuitive interpretation of the results, including scatter plots with color gradients for GDP and population
+
+
+
+# Results
+This section may touch on the methodology and data, but it should focus on the results. It should be beefed up with figures and tables, and other kinds of results that address your question and storyline. What does data tell you? 
+
+To answer our four research questions, we created graphs to visualize the impacts of each relationship to ultimately show if there is an association between the variables. The results can be broken down into each question below: 
+
+
+
+### 1. How strongly does the happiness score in a specific country correlate with its life expectancy, and what trends or patterns emerge from this relationship? 
 
 ```{r uyen}
 ggplot(mergedData, aes(x = `Happiness Score`, y = `Life expectancy `)) +
@@ -200,7 +255,11 @@ ggplot(mergedData, aes(x = `Happiness Score`, y = `Life expectancy `)) +
   theme_minimal()
 ```
 
+* Happiness score in a specific country correlates with its life expectancy in a linearly positive trend. This is shown through the line of best fit, which has a very positive slope and shows a distinct correlation in that higher life expectancies are correlated with higher happiness scores and lower life expectancies are correlated with lower happiness scores. 
 
+
+
+### 2. To what extent do socio-economic factors, such as GDP and population, influence the connection between happiness scores and life expectancy across diverse countries? 
 
 ```{r roshan}
 ggplot(mergedData, aes(x = `Happiness Score`, y = `Life expectancy `, color = `GDP`)) +
@@ -223,7 +282,11 @@ ggplot(mergedData, aes(x = `Happiness Score`, y = `Life expectancy `, color = `P
   theme_minimal()
 ```
 
+* According to our graph, GDP does not appear to have much of an extreme influence on the relationship between happiness scores and life expectancy, but a slight trend can be identified in that countries with greater GDPs tend to have greater life expectancies and greater happiness scores, and the opposite tendencies for countries with lower GDPs. On the other hand, population also does not appear to have much of an influence on this statistical relationship, as there is a great variation in how countries of similar populations rank amongst each other in terms of their life expectancy vs happiness score, and a clear trend cannot be identified.
 
+
+
+### 3. How does the happiness rank of a country correlate with its life expectancy, and are there notable variations among countries with similar happiness scores but different life expectancies?
 
 ```{r mo}
 ggplot(mergedData, aes(x = `Life expectancy `, y = `Happiness Rank`)) +
@@ -245,7 +308,11 @@ ggplot(mergedData, aes(x = `Life expectancy `, y = `Happiness Rank`, col = happi
   )
 ```
 
+* In general, the happiness rank of a country is linearly connected to its life expectancy. One thing to note in the graphs is that Life expectancy is the x axis (independent variable) while Happiness is the y axis (dependent variable). There may be a negative looking trend line in the graphs below, but it is important to notice that we used HAPPINESS RANK as the y values. This means that a closer value to 0 indicates a higher happiness. Also some interesting patterns to notice that in the second colored graph, category A was all clustered very closely together. But as the category changes from B to C to D, the clusters spread more. What we can takeaway from this is that a good (closer to 0) happiness rank definitely correlates to a high life expectancy. However, on the flip side, a high life expectancy does NOT mean that a country is very happy. So, life expectancy does NOT correlate to a country's happiness.
 
+
+
+### 4. Can the status of a country (e.g., developed or developing) act as a moderating factor in the relationship between happiness scores and life expectancy? 
 
 ```{r josh}
 mergedData %>%
@@ -256,5 +323,32 @@ mergedData %>%
        y = "Happiness Score", 
        title = "Life Expectancy vs Happiness Score for Countries in 2015")
 ```
+
+* Based on our graph, it appears that for developed countries, there is a stronger correlation between life expectancy and happiness scores than there is for developing countries. The data also corroborates the idea that developed countries will have higher life expectancies and higher happiness scores. Due to the increased steepness of the line for developed countries in comparison to developing countries, it can be said that the status of a country can act as a moderating actor in the relationship between happiness scores and life expectancy. 
+
+
+
+# Discuss Findings
+The results of our project tells us that overall, there is a positive relationship between happiness score and life expectancy, while also accounting for other factors mentioned in our research questions. 
+
+As shown in “Scatter Plot of Happiness Score vs Life Expectancy”, the variable Happiness Score is on x-axis, while Life Expectancy is on the y-axis, with a best-fit line showing a linearly positive relationship between the two variables. This suggests that, on average, as the Happiness Score of a specific country increases, its Life Expectancy also tends to increase. This finding aligns with the notion that subjective well-being, as measured by happiness in this case, may contribute positively to overall health outcomes. From a public perspective, these implications urge considerations for strategies that not only address healthcare but also encompass broader factors influencing happiness. Initiatives promoting social support, mental health, and community engagement may become integral to enhancing both happiness and life expectancy. Moreover, the positive relationship prompts reflections on the potential universality of the connection between happiness and life expectancy, contributing to a broader understanding of global wellbeing. 
+
+In our “Scatter Plot of Happiness Score vs Life Expectancy with Population” and “Scatter Plot of Happiness Score vs Life Expectancy with GDP”, the same positive trend and association shown in the previous plot are shown, but with specific gradient colors denoting GDP and population levels. In the GDP focused plot, there is a good amount of countries with high GDP having a higher life expectancy and happiness score. This suggests that a positive association between economic prosperity, as reflected in the country’s GDP, and the wellbeing indicators of life expectancy and happiness. Conversely, in the Population focused scatter plot, the interpretation is less straightforward. The varied gradient colors based on population sizes make it more challenging for us to draw a clear and significant connection between population and a country's happiness score and life expectancy. Unlike the evident trend observed with GDP, the impact of population on these well-being indicators appears less pronounced. From a socio-economic perspective, these findings suggest that economic prosperity, as measured by GDP per capita, may play a more substantial role in influencing the connection between happiness scores and life expectancy across diverse countries. The positive correlation observed in the GDP-focused plot implies that as a country's economic status improves, there is a concurrent improvement in both life expectancy and happiness. However, the nuanced and less distinct findings in the population-focused graph suggest that the influence of population size on these well-being indicators is not as straightforward as we initially thought.
+
+Further, in the third scatter plot that’s color coded to indicate the correlation between happiness rank and category with life expectancy, it’s shown that there’s a positive association between a good happiness rank and higher life expectancy. However, a high life expectancy does not correlate with a country’s happiness levels so the two variables are not mutually exclusive. In essence, while a positive correlation exists between happiness rank and life expectancy, variations among countries with similar happiness scores and differing life expectancies further proves the complexity of factors influencing overall well-being.
+
+Lastly, the “Life Expectancy vs Happiness Score for Countries in 2015” scatter plot showed two best-fit lines for developing and developed countries. The results indicate that the status of a country, whether developed or developing, acts as a moderating factor in the relationship between happiness scores and life expectancy. The observed distinction in the best-fit lines for developed and developing countries in the scatter plot suggests that economic development levels influence the nature and strength of this relationship. Developed countries exhibit a steeper relationship line, implying a more pronounced association between happiness scores and life expectancy, while developing countries show a more gradual increase line, suggesting a gentler correlation. This underscores the importance of considering a country's development status when examining the complex interplay between subjective well-being and life expectancy.
+
+While the analysis provides valuable insights into the relationships between happiness scores, life expectancy, and socio-economic factors across countries, several limitations should be acknowledged. The cross-sectional nature of the data from the year 2015 restricts the ability to establish causal relationships or capture temporal dynamics. Additionally, the simplification of dividing countries into categories: developed and developing may oversimplify the complex realities of diverse nations. Furthermore, the study does not delve deeply into specific cultural, political, or healthcare system factors that could contribute to variations in the observed relationships. 
+
+To extend the story, future work should involve longitudinal data to explore trends over time and assess causality. More detailed socio-cultural analyses and consideration of additional variables, such as healthcare infrastructure and political stability, would provide a more comprehensive understanding of the observed patterns. Additionally, qualitative research methods could offer insights into the contextual nuances influencing well-being. As stated in the introduction, there are many factors that obviously play into a country’s life expectancy and happiness, and this project does not aim to prove its true association. Our mere goal was to see if there was a close enough relationship between the two. Further, some missing or removed data might make this conclusion harder to draw. 
+
+
+
+
+# Summary and Conclusion
+In our comprehensive exploration of the intricate relationship between happiness and life expectancy across countries, our analysis uncovers some compelling insights and prompts considerations for public health and policy interventions. The overarching theme is that there is a positive correlation between a country's happiness score and its life expectancy. This is evidenced by the linearly positive relationship depicted in the scatter plot of Happiness Score vs Life Expectancy, suggesting that as a country's happiness score increases, so does its life expectancy. This finding aligns with current research and literature, ultimately supporting the known belief that a balanced and happy state positively contributes to a person’s health outcomes. Beyond this connection, economic prosperity, as indicated by GDP, is correlated with higher life expectancy and happiness. The development status of a country moderates the happiness-life expectancy relationship, with developed nations showing a more pronounced correlation. While our insights offer valuable considerations for public health, acknowledging limitations, future work should explore longitudinal data and socio-cultural nuances for a more comprehensive understanding. 
+
+To revisit, our topic is inherently multidimensional and encompasses a myriad of interconnected factors that contribute to the complexity of understanding the dynamics at play. As a result of our findings, we came to the conclusion that social science questions such as “does happiness affect life expectancy” introduces challenges rooted in the subjective nature of wellbeing and doesn’t take into account different factors and determinants. Happiness itself is a nuanced and subjective experience, varying across individuals and cultures, making it difficult to quantify in a standardized manner. Moreover, life expectancy is influenced by an array of factors, ranging from socio-economic conditions to healthcare accessibility. Attempting to distill these multifaceted elements into quantifiable measures requires careful consideration of various dimensions, acknowledging the limitations and potential biases inherent in such assessments. Thus, the pursuit of unraveling the intricate connections between happiness and life expectancy underscores the intricate nature of social science inquiries and the ongoing quest to capture the nuanced realities of human well-being.
 
 
