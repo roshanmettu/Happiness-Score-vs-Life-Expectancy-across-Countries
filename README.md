@@ -1,0 +1,9 @@
+# INFO201 Final Project
+
+Many individuals have heard the saying “happy people live longer”, a notion that resonates with the broader discourse on the intricate relationship between well-being and longevity. In recent years, the intersection of well-being and public health has become a focal point of global discussions. Specifically, over the last 50 years, life expectancy globally has increased about 10-15 years. The pursuit of happiness and a fulfilling life is a universal human aspiration, and its connection with various socio-economic factors has intrigued researchers, policymakers, and the general public alike. To further analyze this, our group project ultimately aims to explore the relationship between a country’s happiness score and its life expectancy, while focusing specifically on data from the year 2015.
+
+Our target audience consists of policymakers, public health researchers, global organizations, and social scientists. Here, we will explain the impact of our research on these 4 targeted audiences. To start it off, policymakers or government officials can use this research to be more informed on decisions regarding laws and such. Public health researchers could benefit through gaining insight into factors that impact a country's LE or happiness score. Moving on to global organizations, this research could help them with advocacy and also planning for global health and development initiatives. Lastly, social scientists could obtain a more Holistic understanding and perspective on the connections between economic factors, societal well-being, and health outcomes, contributing to a more comprehensive understanding of human development.
+
+<img width="696" alt="Screenshot 2023-12-08 at 22 49 44" src="https://github.com/roshanmettu/INFO201_FinalProject/assets/136824208/85d71272-6466-4c72-bcff-67e52baf83e8">
+
+* This is a scatter plot that's color coded to indicate the correlation between happiness (rank and category) and life expectancy
