@@ -1,4 +1,5 @@
-# INFO201 Final Project
+# INFO201 Final Project :chart_with_upwards_trend:	
+**Happiness Score vs Life Expectancy across Countries**
 
 Many individuals have heard the saying “happy people live longer”, a notion that resonates with the broader discourse on the intricate relationship between well-being and longevity. In recent years, the intersection of well-being and public health has become a focal point of global discussions. Specifically, over the last 50 years, life expectancy globally has increased about 10-15 years. The pursuit of happiness and a fulfilling life is a universal human aspiration, and its connection with various socio-economic factors has intrigued researchers, policymakers, and the general public alike. To further analyze this, our group project ultimately aims to explore the relationship between a country’s happiness score and its life expectancy, while focusing specifically on data from the year 2015.
 
